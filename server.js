@@ -32,7 +32,7 @@ app.use(morgan("dev")); // logging
 app.use(express.json()); // parse json bodies
 
 //test route
-app.get("/recipe", async (req, res) => {
+app.get("/", async (req, res) => {
     try {
         res.json(await Recipe.find(req.body));
       } catch (error) {

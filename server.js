@@ -32,13 +32,13 @@ app.use(morgan("dev")); // logging
 app.use(express.json()); // parse json bodies
 
 //test route
-app.get("/", async (req, res) => {
+app.get("/recipe", async (req, res) => {
     try {
         res.json(await Recipe.find(req.body));
       } catch (error) {
         res.status(400).json(error);
       }
-});
+  });
 
 //Recipe create
 app.post("/recipe", async (req, res) => {
